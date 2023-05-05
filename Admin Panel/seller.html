@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seller's Page</title>
+    <link rel="stylesheet" href="seller.css">
+
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="card"></div>
+        </li>
+    </ul>
+
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-storage-compat.js"></script>
+    <script>
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBL7DrOCzeWYh9XSFPNOVikcOGlOfqoRDM",
+            authDomain: "farm2door-3ed23.firebaseapp.com",
+            databaseURL: "https://farm2door-3ed23-default-rtdb.firebaseio.com",
+            projectId: "farm2door-3ed23",
+            storageBucket: "farm2door-3ed23.appspot.com",
+            messagingSenderId: "898911335893",
+            appId: "1:898911335893:web:5f56b3a732a18de7e7b95c",
+            measurementId: "G-XND4Q1ZGGM"
+        };
+
+        // Initialize Firebase
+        const firebaseApp = firebase.initializeApp(firebaseConfig);
+        const db = firebaseApp.firestore();
+        const database = firebaseApp.database();
+        const storage = firebaseApp.storage();
+
+        //-----------------------------------------------------------------------------------------------------------------
+    </script>
+    <script src="seller.js"></script>
+
+</body>
+
+</html>

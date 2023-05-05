@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context=".Activity.Buyer.RegisterUserProfile">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:tint="#313131" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Buyer Profile"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_my_location_24"
+            app:tint="#313131" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_person_24"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="2dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="#F0F2F6"
+            tools:ignore="UnusedAttribute">
+
+            <EditText
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:inputType="textVisiblePassword"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:fontFamily="@font/bold_roboto"
+                android:gravity="center_vertical"
+                android:hint="Your Name"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#8B8D93"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="#F0F2F6"
+            tools:ignore="UnusedAttribute">
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:fontFamily="@font/bold_roboto"
+                android:gravity="center_vertical"
+                android:hint="Phone number"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#8B8D93"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="#F0F2F6"
+                tools:ignore="UnusedAttribute">
+
+                <EditText
+                    android:id="@+id/country"
+                    android:layout_width="match_parent"
+                    android:inputType="textVisiblePassword"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:fontFamily="@font/bold_roboto"
+                    android:gravity="center_vertical"
+                    android:hint="Country"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColorHint="#8B8D93"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,TextFields" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="#F0F2F6"
+                tools:ignore="UnusedAttribute">
+
+                <EditText
+                    android:id="@+id/state"
+                    android:layout_width="match_parent"
+                    android:inputType="textVisiblePassword"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:fontFamily="@font/bold_roboto"
+                    android:gravity="center_vertical"
+                    android:hint="State"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColorHint="#8B8D93"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,TextFields" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="#F0F2F6"
+                tools:ignore="UnusedAttribute">
+
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:inputType="textVisiblePassword"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:fontFamily="@font/bold_roboto"
+                    android:gravity="center_vertical"
+                    android:hint="City"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColorHint="#8B8D93"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,TextFields" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="#F0F2F6"
+            tools:ignore="UnusedAttribute">
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:inputType="textVisiblePassword"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:fontFamily="@font/bold_roboto"
+                android:gravity="center_vertical"
+                android:hint="Address"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#8B8D93"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null"
+            android:text="Create"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

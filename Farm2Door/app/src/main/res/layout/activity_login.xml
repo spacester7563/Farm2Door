@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".Activity.LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee"
+        android:paddingLeft="20dp"
+        android:text="SignIn"
+        android:layout_marginTop="70dp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="#F0F2F6"
+            tools:ignore="UnusedAttribute">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:inputType="textVisiblePassword"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:fontFamily="@font/bold_roboto"
+                android:gravity="center_vertical"
+                android:hint="Email"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#8B8D93"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="#F0F2F6"
+            tools:ignore="UnusedAttribute">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:inputType="textWebPassword"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:fontFamily="@font/bold_roboto"
+                android:gravity="center_vertical"
+                android:hint="Password"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#8B8D93"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/resetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Forget Password"
+            android:fontFamily="@font/bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="Login"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have account ?"
+                android:textColor="@color/black"
+                android:fontFamily="@font/bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/signUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Sign Up"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:fontFamily="@font/bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

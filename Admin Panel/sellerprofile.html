@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>seller profile</title>
+    <link rel="stylesheet" href="sellerprofile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+                        width="150px"
+                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
+                        class="font-weight-bold" id="selname"></span><span class="text-black-50"
+                        id="selemail"></span><span> </span></div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control"
+                                id="name" placeholder="first name" value=""></div>
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" id="phone"
+                                class="form-control" placeholder="enter phone number" value=""></div>
+                        <div class="col-md-12"><label class="labels">Address</label><input type="text" id="address"
+                                class="form-control" placeholder="enter address line 1" value=""></div>
+                        <!--<div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>-->
+                        <div class="col-md-12"><label class="labels">Type</label><input type="text" id="type" class="form-control" placeholder="enter address line 2" value=""></div>
+                        <div class="col-md-12"><label class="labels">ID</label><input type="text" id="uid"
+                                class="form-control" placeholder="enter address line 2" value=""></div>
+                        <div class="col-md-12"><label class="labels">city</label><input type="text" id="city"
+                                class="form-control" placeholder="enter address line 2" value=""></div>
+                        <div class="col-md-12"><label class="labels">Email ID</label><input type="text" id="email"
+                                class="form-control" placeholder="enter email id" value=""></div>
+                        <div class="col-md-12"><label class="labels">ShopName</label><input type="text" id="shopname"
+                                class="form-control" placeholder="education" value=""></div>
+                        <div class="col-md-12"><label class="labels">DeliveryFee</label><input type="text" id="fee"
+                                class="form-control" placeholder="education" value=""></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Country</label><input type="text" id="country"
+                                class="form-control" placeholder="country" value=""></div>
+                        <div class="col-md-6"><label class="labels">State/Region</label><input type="text" id="state"
+                                class="form-control" value="" placeholder="state"></div>
+                    </div>
+                    <div class="mt-5 text-center"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience"><span>Rating</span></div>
+                    <br>
+                    <div class="col-md-12"><label class="labels">Rating</label><input type="text" id="rating" class="form-control"
+                            placeholder="experience" value=""></div> <br>
+                    <div class="col-md-12"><label class="labels">Review</label><input type="text" id="review" class="form-control"
+                            placeholder="additional details" value=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-storage-compat.js"></script>
+    <script>
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBL7DrOCzeWYh9XSFPNOVikcOGlOfqoRDM",
+            authDomain: "farm2door-3ed23.firebaseapp.com",
+            databaseURL: "https://farm2door-3ed23-default-rtdb.firebaseio.com",
+            projectId: "farm2door-3ed23",
+            storageBucket: "farm2door-3ed23.appspot.com",
+            messagingSenderId: "898911335893",
+            appId: "1:898911335893:web:5f56b3a732a18de7e7b95c",
+            measurementId: "G-XND4Q1ZGGM"
+        };
+
+        // Initialize Firebase
+        const firebaseApp = firebase.initializeApp(firebaseConfig);
+        const db = firebaseApp.firestore();
+        const database = firebaseApp.database();
+        const storage = firebaseApp.storage();
+
+        //-----------------------------------------------------------------------------------------------------------------
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="sellerprofile.js"></script>
+</body>
+
+</html>

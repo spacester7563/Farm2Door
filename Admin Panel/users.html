@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm2Door</title>
+  <link href="https://cdn.jsdelivr.net/npm/@chakra-ui/core/dist/chakra.min.css" rel="stylesheet">
+  <style>
+    /* Import Chakra UI CSS */
+@import url("https://cdn.jsdelivr.net/npm/@chakra-ui/core/dist/chakra.min.css");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+/* Custom styles */
+body{
+    background: -webkit-linear-gradient(left, #003366,#004080,#0059b3
+    , #0073e6);
+      }
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.search-container {
+  
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 40px;
+  padding-top: 40px;
+}
+
+.search-bar {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.names-container {
+    background-color: #f4f7fe;
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.name {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: -webkit-linear-gradient(left, #003366,#004080,#0059b3
+    , #0073e6);
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: #1E90FF;
+  }
+}
+
+.details-container {
+  background-color: #f4f7fe;
+  flex: 2;
+  padding: 20px;
+}
+
+.details {
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-top: 105px;
+  background-color: #EDF2F7;
+  border-radius: 5px;
+}
+
+/* Customize the search bar */
+.search-bar {
+  font-family: "DM Sans", sans-serif;
+  background-color: #E2E8F0;
+  border-radius: 9999px;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  }
+}
+
+/* Hide scrollbar */
+.names-container::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #F7FAFC;
+}
+
+.names-container::-webkit-scrollbar-thumb {
+  background-color: #CBD5E0;
+}
+
+.names-container::-webkit-scrollbar-track {
+  background-color: #F7FAFC;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search">
+    </div>
+    <div style="background-color: #f4f7fe; padding: 20px; width: 300px">
+    <div style="padding-left: 20px; font-family: DM Sans, sans-serif;" ><h1>Consumers</h1></div>
+    <div class="names-container">
+    </div></div>
+        <div class="details-container">
+        </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+  <script>
+   // Replace with your own Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyBL7DrOCzeWYh9XSFPNOVikcOGlOfqoRDM",
+  authDomain: "farm2door-3ed23.firebaseapp.com",
+  databaseURL: "https://farm2door-3ed23-default-rtdb.firebaseio.com",
+  projectId: "farm2door-3ed23",
+  storageBucket: "farm2door-3ed23.appspot.com",
+  messagingSenderId: "898911335893",
+  appId: "1:898911335893:web:5f56b3a732a18de7e7b95c",
+  measurementId: "G-XND4Q1ZGGM"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the "users" node in the Realtime Database
+var usersRef = firebase.database().ref("Users");
+
+// Listen for changes to the "users" node
+usersRef.orderByChild("accountType").equalTo("User").on("value", function(snapshot) {
+  // Get the data from the snapshot
+  var users = snapshot.val();
+
+  // Get references to the names and details containers
+  var namesContainer = document.querySelector(".names-container");
+  var detailsContainer = document.querySelector(".details-container");
+
+  // Clear the names and details containers
+  namesContainer.innerHTML = "";
+  detailsContainer.innerHTML = "";
+
+  // Loop through the users and create a name element for each one
+  for (var userId in users) {
+    var user = users[userId];
+    var name = user.name;
+
+    var nameElement = document.createElement("div");
+    nameElement.textContent = name;
+    nameElement.classList.add("name");
+    nameElement.setAttribute("data-user-id", userId);
+    nameElement.addEventListener("click", function(event) {
+      // Get the user ID from the clicked name element
+      var userId = event.target.getAttribute("data-user-id");
+
+      // Get the user data from the users object
+      var user = users[userId];
+      var name = user.name;
+      var address = user.address;
+      var phone = user.phone;
+      var email = user.email;
+
+      // Create a details element with the user data
+      var detailsElement = document.createElement("div");
+      detailsElement.classList.add("details");
+      detailsElement.innerHTML = `
+        <div>Name: ${name}</div>
+        <div>Address: ${address}</div>
+        <div>Phone: ${phone}</div>
+        <div>Email: ${email}</div>
+      `;
+
+      // Clear the details container and add the details element to it
+      detailsContainer.innerHTML = "";
+      detailsContainer.appendChild(detailsElement);
+    });
+
+    // Add the name element to the names container
+    namesContainer.appendChild(nameElement);
+  }
+});
+
+// Add an event listener to the search bar to filter the names
+var searchBar = document.querySelector(".search-bar");
+searchBar.addEventListener("input", function(event) {
+  // Get the search query from the search bar
+  var query = event.target.value.toLowerCase();
+
+  // Get references to all the name elements
+  var names = document.querySelectorAll(".name");
+
+  // Loop through the name elements and show/hide them based on the search query
+  names.forEach(function(name) {
+    var nameText = name.textContent.toLowerCase();
+    if (nameText.includes(query)) {
+      name.style.display = "block";
+    } else {
+      name.style.display = "none";
+    }
+  });
+});
+
+  </script>
+</body>
+</html>
